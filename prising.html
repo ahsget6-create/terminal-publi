@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خطط الأسعار والخدمات</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #1e1e2f;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .pricing-container {
+      width: 100%;
+      max-width: 1000px;
+      text-align: center;
+    }
+
+    .main-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .sub-title {
+      font-size: 1rem;
+      color: #a0a0b8;
+      margin-bottom: 40px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      align-items: center;
+    }
+
+    .price-card {
+      background-color: #2a2a40;
+      padding: 35px 25px;
+      border-radius: 20px;
+      border: 1px solid #3d3d5c;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 480px;
+    }
+
+    .price-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .price-card.popular {
+      background-color: #322b59;
+      border: 2px solid #00d2d3;
+      box-shadow: 0 0 20px rgba(0, 210, 211, 0.2);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -15px;
+      right: 50%;
+      transform: translateX(50%);
+      background-color: #00d2d3;
+      color: #1e1e2f;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .plan-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #00d2d3;
+      margin-bottom: 20px;
+    }
+
+    .price span {
+      font-size: 0.9rem;
+      color: #a0a0b8;
+    }
+
+    .features-list {
+      list-style: none;
+      text-align: right;
+      margin-bottom: 30px;
+    }
+
+    .features-list li {
+      font-size: 0.95rem;
+      color: #d1d1e0;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .features-list li::before {
+      content: "✓";
+      color: #00d2d3;
+      font-weight: bold;
+    }
+
+    .btn-plan {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: transparent;
+      border: 2px solid #00d2d3;
+      color: #00d2d3;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .price-card.popular .btn-plan {
+      background-color: #00d2d3;
+      color: #1e1e2f;
+    }
+
+    .btn-plan:hover {
+      background-color: #00d2d3;
+      color: #1e1e2f;
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="pricing-container">
+    <h1 class="main-title">خطط الأسعار والخدمات</h1>
+    <p class="sub-title">اختر الخطة المناسبة لمشروعك وابدأ في تحويل أفكارك إلى واقع</p>
+
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div>
+          <h2 class="plan-name">الأساسية (Basic)</h2>
+          <div class="price">50$ <span>/ للمشروع</span></div>
+          <ul class="features-list">
+            <li>تصميم صفحة هبوط (Landing Page)</li>
+            <li>واجهة متجاوبة مع الهواتف</li>
+            <li>تنسيقات CSS وتأثيرات بسيطة</li>
+            <li>تسليم الكود خلال 3 أيام</li>
+          </ul>
+        </div>
+        <a href="profile.html" class="btn-plan">طلب الخدمة</a>
+      </div>
+
+      <div class="price-card popular">
+        <div class="popular-badge">الأكثر طلباً</div>
+        <div>
+          <h2 class="plan-name">الاحترافية (Pro)</h2>
+          <div class="price">150$ <span>/ للمشروع</span></div>
+          <ul class="features-list">
+            <li>موقع متكامل (3 - 5 صفحات)</li>
+            <li>قائمة جانبة وتفاعلية (JavaScript)</li>
+            <li>تجاوب كامل مع كافة الشاشات</li>
+            <li>ربط الصفحات ومعرض أعمال</li>
+            <li>دعم وتعديلات لمدة أسبوعين</li>
+          </ul>
+        </div>
+        <a href="profile.html" class="btn-plan">طلب الخدمة</a>
+      </div>
+
+      <div class="price-card">
+        <div>
+          <h2 class="plan-name">المتقدمة (Custom)</h2>
+          <div class="price">حسب الطلب</div>
+          <ul class="features-list">
+            <li>مشاريع خاصة ومخصصة بالكامل</li>
+            <li>تكامل بين الويب وتصاميم الأوتوكاد</li>
+            <li>واجهات معقدة وتفاعليات خاصة</li>
+            <li>دعم أولوية وتعديلات مفتوحة</li>
+          </ul>
+        </div>
+        <a href="profile.html" class="btn-plan">تواصل للتفاصيل</a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

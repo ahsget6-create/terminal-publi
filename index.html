@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض أعمال المبرمج الحسن</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #projects {
+            scroll-margin-top: 80px;
+        }
+
+        body {
+            background-color: #ccc;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* الهيدر العلوي الثابت */
+        .card {
+            position: fixed;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 60px;
+            font-size: 20px;
+            background-color: #f0f0f0;
+            top: 0;
+            left: 0;
+            justify-content: flex-start;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 12px 20px;
+            z-index: 1000;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        }
+
+        .card .photo1 {
+            width: 50px;
+            height: 45px;
+            object-fit: contain;
+            margin-left: 15px;
+        }
+
+        .card h5 {
+            font-size: 16px;
+            margin: 0;
+            color: #333;
+        }
+
+        /* البطاقة الرئيسية */
+        .card1 {
+            width: 85%;
+            max-width: 500px;
+            min-height: 30vh;
+            background-color: #f0f0f0;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            display: flex;
+            padding: 25px 20px;
+            margin: 120px auto 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            box-sizing: border-box;
+        }
+
+        .card1 h2.title1 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: #122;
+            font-size: 22px;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* النبذة التعريفية */
+        .bio-text {
+            color: #64748b;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        /* حاوية الأزرار */
+        .btn-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .btn-box a {
+            text-decoration: none;
+            color: white;
+            background-color: steelblue;
+            padding: 10px 18px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            margin: 0;
+            font-size: 15px;
+            font-weight: bold;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn-box a:active {
+            transform: scale(0.95); 
+            background-color: #2c5282;
+        }
+
+        /* قسم المشاريع */
+        .projects-section {
+            width: 85%;
+            max-width: 600px;
+            margin: 40px auto 60px auto;
+            text-align: center;
+        }
+
+        .projects-section h2 {
+            color: #1e293b;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .projects-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            width: 100%;
+            max-width: 260px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease;
+            text-align: right;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #0f172a;
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #64748b;
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* تذييل الصفحة */
+        .footer {
+            margin-top: auto;
+            background-color: #1e293b;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الشريط العلوي الثابت -->
+    <div class="card">
+        <img class="photo1" src="1791875315538.jpg" alt="شعار الموقع">
+        <h5>معرض مشاريع المبرمج الحسن</h5>
+    </div>
+
+    <!-- البطاقة الرئيسية -->
+    <div class="card1">
+        <h2 class="title1">مرحباً في موقع مشاريعي لتطوير المواقع الالكترونية</h2>
+        <p class="bio-text">أطور مهاراتي خطوة بخطوة في تصميم واجهات الويب</p>
+        
+        <div class="btn-box">
+            <a href="#projects">تصاميم</a>
+            <a href="#">مواقع متكاملة</a>
+        </div>
+    </div>
+
+    <!-- قسم المشاريع -->
+    <section id="projects" class="projects-section">
+        <h2>مشاريعي وتصاميمي</h2>
+        
+        <div class="projects-grid">
+            <!-- المشروع الأول (مربوط بصفحة التصاميم الفرعية designs.html) -->
+            <a href="designs.html" style="text-decoration: none; color: inherit; display: block; width: 100%; max-width: 260px;">
+                <div class="project-card">
+                    <h3>المشروع الأول</h3>
+                    <p>اضغط لعرض قائمة الأفكار والتصاميم المختلفة.</p>
+                </div>
+            </a>
+
+            <!-- المشروع الثاني -->
+            <div class="project-card">
+                <h3>المشروع الثاني</h3>
+                <p>قريباً سيتم إضافة تفاصيل هذا المشروع البرمجي هنا.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer">
+        <p>© 2026 تم التطوير بواسطة المبرمج الحسن. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script></script>
+</body>
+</html>
