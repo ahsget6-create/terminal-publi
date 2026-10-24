@@ -11,8 +11,6 @@
             font-family: sans-serif;
             background-color: #fff;
         }
-
-        /* زر فتح القائمة (الثلاث شرطات) */
         .menu-btn {
             position: fixed;
             top: 15px;
@@ -24,9 +22,7 @@
             border-radius: 8px;
             cursor: pointer;
             z-index: 100;
-        }
-
-        /* القائمة الجانبية وتصميمها */
+        } 
         .sidebar {
             position: fixed;
             top: 0;
@@ -98,10 +94,8 @@
 </head>
 <body>
 <h5>تصميم من تصاميمي للsidebar:</h5>
-    <!-- زر فتح القائمة -->
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <!-- القائمة الجانبية -->
     <div class="sidebar" id="mySidebar">
         <button class="close-btn" onclick="toggleMenu()">&times;</button>
         <a href="index.html">🏠 الرئيسية</a>
@@ -109,8 +103,6 @@
         <a href="#" onclick="toggleMenu()">📐 مشروع الـ sidebar</a>
       <a href="index.html#contact">📩 تواصل معي</a>
     </div>
-
-    <!-- طبقة الظل الخلفية -->
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
 <a href="designs.html" class="back-to-designs">العودة للتصاميم</a>
     <script>
