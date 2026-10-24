@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مهاراتي | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #3b3b52;
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    .skills-container {
+      width: 100%;
+      max-width: 850px;
+      text-align: center;
+    }
+
+    .main-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .sub-title {
+      font-size: 1rem;
+      color: #b3b3cb;
+      margin-bottom: 35px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background-color: #6a2c91;
+      padding: 25px 20px;
+      border-radius: 18px;
+      text-align: right;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+    }
+
+    .skill-name {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .skill-desc {
+      font-size: 0.9rem;
+      color: #e0d6ed;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      color: #d1c4e9;
+      font-weight: 600;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: #4cd137;
+      border-radius: 10px;
+      transition: width 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="skills-container">
+    <h1 class="main-title">مهاراتي التقنية 🚀</h1>
+    <p class="sub-title">الأدوات والتقنيات التي أستخدمها في بناء واجهات وتجارب مستخدم ممتازة</p>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <div>
+          <div class="card-header">
+            <span class="skill-icon">🌐</span>
+            <h2 class="skill-name">HTML5</h2>
+          </div>
+          <p class="skill-desc">بناء هيكلية الصفحات المعيارية والوصول الشامل للويب.</p>
+        </div>
+        <div>
+          <div class="progress-info">
+            <span>المستوى</span>
+            <span>90%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 90%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div>
+          <div class="card-header">
+            <span class="skill-icon">🎨</span>
+            <h2 class="skill-name">CSS3 / Flexbox</h2>
+          </div>
+          <p class="skill-desc">التنسيق المتقدم، المحاذاة، والتصميم التفاعلي للشاشات.</p>
+        </div>
+        <div>
+          <div class="progress-info">
+            <span>المستوى</span>
+            <span>85%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 85%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div>
+          <div class="card-header">
+            <span class="skill-icon">⚡</span>
+            <h2 class="skill-name">JavaScript</h2>
+          </div>
+          <p class="skill-desc">إضافة التفاعلية، منطق الواجهات، وتمرير واستعراض البيانات.</p>
+        </div>
+        <div>
+          <div class="progress-info">
+            <span>المستوى</span>
+            <span>10%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 10%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div>
+          <div class="card-header">
+            <span class="skill-icon">📐</span>
+            <h2 class="skill-name">UI/UX (Figma)</h2>
+          </div>
+          <p class="skill-desc">تصميم الواجهات، تخطيط النماذج (Wireframing)، وتجربة المستخدم.</p>
+        </div>
+        <div>
+          <div class="progress-info">
+            <span>المستوى</span>
+            <span>80%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
