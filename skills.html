@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مهاراتي | Portfolio</title>
+  <title>مهاراتي التقنية | Hassan</title>
   <style>
     * {
       margin: 0;
@@ -13,188 +13,256 @@
     }
 
     body {
-      background-color: #3b3b52;
-      color: #ffffff;
+      background-color: #0f172a; /* خلفية كحلية رمادية مريحة جداً للعين */
+      color: #f8fafc;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
 
     .skills-container {
       width: 100%;
-      max-width: 850px;
+      max-width: 950px;
+    }
+
+    .header-section {
       text-align: center;
+      margin-bottom: 45px;
     }
 
     .main-title {
       font-size: 2.2rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: #ffffff;
+      font-weight: 800;
+      color: #38bdf8;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
     }
 
     .sub-title {
       font-size: 1rem;
-      color: #b3b3cb;
-      margin-bottom: 35px;
+      color: #94a3b8;
     }
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
     }
 
     .skill-card {
-      background-color: #6a2c91;
-      padding: 25px 20px;
-      border-radius: 18px;
-      text-align: right;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .skill-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      transform: translateY(-6px);
+      border-color: #38bdf8;
+      box-shadow: 0 12px 28px -10px rgba(56, 189, 248, 0.25);
     }
 
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
-    .skill-icon {
-      font-size: 2rem;
-    }
-
-    .skill-name {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #ffffff;
-    }
-
-    .skill-desc {
-      font-size: 0.9rem;
-      color: #e0d6ed;
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .progress-info {
+    .card-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background: rgba(56, 189, 248, 0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .skill-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      text-align: right;
+    }
+
+    .skill-desc {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      text-align: right;
+    }
+
+    /* الدائرة النيون لقياس النسب */
+    .radial-progress-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #0f172a;
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid #1e293b;
+    }
+
+    .radial-label {
       font-size: 0.85rem;
-      margin-bottom: 8px;
-      color: #d1c4e9;
       font-weight: 600;
+      color: #cbd5e1;
     }
 
-    .progress-bar {
-      width: 100%;
-      height: 8px;
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-      overflow: hidden;
+    .circle-chart {
+      width: 50px;
+      height: 50px;
     }
 
-    .progress-fill {
-      height: 100%;
-      background-color: #4cd137;
-      border-radius: 10px;
-      transition: width 1s ease-in-out;
+    .circle-bg {
+      fill: none;
+      stroke: #334155;
+      stroke-width: 3.8;
     }
+
+    .circle-fill {
+      fill: none;
+      stroke-width: 3.8;
+      stroke-linecap: round;
+      stroke: #38bdf8;
+      transition: stroke-dasharray 1s ease;
+    }
+
+    .percentage-text {
+      fill: #f8fafc;
+      font-size: 0.65rem;
+      font-weight: bold;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+
+    /* ألوان التمييز الخاصة بالبطاقات */
+    .skill-card[data-tech="python"] .circle-fill { stroke: #34d399; }
+    .skill-card[data-tech="python"] .icon-wrapper { background: rgba(52, 211, 153, 0.1); border-color: rgba(52, 211, 153, 0.2); }
+    .skill-card[data-tech="js"] .circle-fill { stroke: #facc15; }
+    .skill-card[data-tech="js"] .icon-wrapper { background: rgba(250, 204, 21, 0.1); border-color: rgba(250, 204, 21, 0.2); }
   </style>
 </head>
 <body>
 
   <div class="skills-container">
-    <h1 class="main-title">مهاراتي التقنية 🚀</h1>
-    <p class="sub-title">الأدوات والتقنيات التي أستخدمها في بناء واجهات وتجارب مستخدم ممتازة</p>
+
+    <div class="header-section">
+      <h1 class="main-title">القدرات والمهارات التقنية 💻</h1>
+      <p class="sub-title">الأدوات التي أستخدمها لبناء تطبيقات ويب حديثة وقواعد بيانات متكاملة</p>
+    </div>
 
     <div class="skills-grid">
 
+      <!-- HTML5 -->
       <div class="skill-card">
         <div>
-          <div class="card-header">
-            <span class="skill-icon">🌐</span>
+          <div class="card-top">
             <h2 class="skill-name">HTML5</h2>
+            <div class="icon-wrapper">🌐</div>
           </div>
-          <p class="skill-desc">بناء هيكلية الصفحات المعيارية والوصول الشامل للويب.</p>
+          <p class="skill-desc">بناء هيكلية الصفحات المعيارية والوصول الشامل للويب بطريقة منظمة.</p>
         </div>
-        <div>
-          <div class="progress-info">
-            <span>المستوى</span>
-            <span>90%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 90%;"></div>
-          </div>
+
+        <div class="radial-progress-wrapper">
+          <span class="radial-label">المستوى الحالي</span>
+          <svg viewBox="0 0 36 36" class="circle-chart">
+            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="circle-fill" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <text x="18" y="18" class="percentage-text">90%</text>
+          </svg>
         </div>
       </div>
 
+      <!-- CSS3 -->
       <div class="skill-card">
         <div>
-          <div class="card-header">
-            <span class="skill-icon">🎨</span>
+          <div class="card-top">
             <h2 class="skill-name">CSS3 / Flexbox</h2>
+            <div class="icon-wrapper">🎨</div>
           </div>
-          <p class="skill-desc">التنسيق المتقدم، المحاذاة، والتصميم التفاعلي للشاشات.</p>
+          <p class="skill-desc">التنسيق المتقدم، المحاذاة، والتصميم التفاعلي الشامل للهواتف والشاشات.</p>
         </div>
-        <div>
-          <div class="progress-info">
-            <span>المستوى</span>
-            <span>85%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 85%;"></div>
-          </div>
+
+        <div class="radial-progress-wrapper">
+          <span class="radial-label">المستوى الحالي</span>
+          <svg viewBox="0 0 36 36" class="circle-chart">
+            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="circle-fill" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <text x="18" y="18" class="percentage-text">85%</text>
+          </svg>
         </div>
       </div>
 
-      <div class="skill-card">
+      <!-- JavaScript -->
+      <div class="skill-card" data-tech="js">
         <div>
-          <div class="card-header">
-            <span class="skill-icon">⚡</span>
+          <div class="card-top">
             <h2 class="skill-name">JavaScript</h2>
+            <div class="icon-wrapper">⚡</div>
           </div>
-          <p class="skill-desc">إضافة التفاعلية، منطق الواجهات، وتمرير واستعراض البيانات.</p>
+          <p class="skill-desc">إضافة التفاعلية الديناميكية، التحكم بالواجهات، والتفاعل مع العناصر.</p>
         </div>
-        <div>
-          <div class="progress-info">
-            <span>المستوى</span>
-            <span>10%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 10%;"></div>
-          </div>
+
+        <div class="radial-progress-wrapper">
+          <span class="radial-label">المستوى الحالي</span>
+          <svg viewBox="0 0 36 36" class="circle-chart">
+            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="circle-fill" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <text x="18" y="18" class="percentage-text">80%</text>
+          </svg>
         </div>
       </div>
 
+      <!-- Python -->
+      <div class="skill-card" data-tech="python">
+        <div>
+          <div class="card-top">
+            <h2 class="skill-name">Python / Flask</h2>
+            <div class="icon-wrapper">🐍</div>
+          </div>
+          <p class="skill-desc">تطوير السيرفرات والتطبيقات الكاملة وإدارة قواعد البيانات بكفاءة.</p>
+        </div>
+
+        <div class="radial-progress-wrapper">
+          <span class="radial-label">المستوى الحالي</span>
+          <svg viewBox="0 0 36 36" class="circle-chart">
+            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="circle-fill" stroke-dasharray="65, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <text x="18" y="18" class="percentage-text">65%</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- UI/UX -->
       <div class="skill-card">
         <div>
-          <div class="card-header">
-            <span class="skill-icon">📐</span>
+          <div class="card-top">
             <h2 class="skill-name">UI/UX (Figma)</h2>
+            <div class="icon-wrapper">📐</div>
           </div>
-          <p class="skill-desc">تصميم الواجهات، تخطيط النماذج (Wireframing)، وتجربة المستخدم.</p>
+          <p class="skill-desc">تصميم الواجهات، تخطيط الهياكل، ودراسة أفضل تجارب المستخدم.</p>
         </div>
-        <div>
-          <div class="progress-info">
-            <span>المستوى</span>
-            <span>80%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 80%;"></div>
-          </div>
+
+        <div class="radial-progress-wrapper">
+          <span class="radial-label">المستوى الحالي</span>
+          <svg viewBox="0 0 36 36" class="circle-chart">
+            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <path class="circle-fill" stroke-dasharray="80, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+            <text x="18" y="18" class="percentage-text">80%</text>
+          </svg>
         </div>
       </div>
 
